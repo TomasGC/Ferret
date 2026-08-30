@@ -1,0 +1,16 @@
+# Local development database only — production uses Neon (see .claude/ARCHITECTURE.md).
+# Run: docker compose -f docker-compose.dev.yml up -d
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ferret
+      POSTGRES_PASSWORD: ferret
+      POSTGRES_DB: ferret
+    ports:
+      - "5432:5432"
+    volumes:
+      - ferret_pgdata:/var/lib/postgresql/data
+
+volumes:
+  ferret_pgdata:
