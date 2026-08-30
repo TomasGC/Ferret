@@ -4,7 +4,7 @@ Criteria filtering logic, ported from Engine/JobFilterEngine.kt.
 Original Kotlin version filtered on a single global criteria.json (allowed_job_names,
 forbidden_languages, forbidden_domains). Here it's per-user: same three rules, but
 sourced from a user's `Criteria` row + their `CriteriaForbiddenDomain` links instead
-of one shared file. See ARCHITECTURE.md "Data model" for the schema.
+of one shared file. See .claude/contexts/architecture.md "Data model" for the schema.
 """
 
 from app.models.criteria import Criteria

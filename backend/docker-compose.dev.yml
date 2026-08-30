@@ -1,4 +1,4 @@
-# Local development database only — production uses Neon (see .claude/ARCHITECTURE.md).
+# Local development database only — production uses Neon (see .claude/contexts/architecture.md).
 # Run: docker compose -f docker-compose.dev.yml up -d
 services:
   db:

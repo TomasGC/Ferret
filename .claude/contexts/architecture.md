@@ -1,4 +1,23 @@
-# Ferret — Architecture
+# Project Architecture - Ferret
+
+**Purpose**: System architecture and design decisions for Ferret (job-offer tracker: Kotlin/Compose app + Python/FastAPI backend)
+**Last Updated**: 2026-08-30
+
+---
+
+## Tech Stack
+
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| **Backend language** | Python 3.13 | API + scraper |
+| **API framework** | FastAPI | REST API |
+| **ORM** | SQLAlchemy 2.0 | Postgres access, table models |
+| **Database** | Postgres (Neon, free tier prod / Docker local dev) | Shared catalog + per-user data |
+| **Auth** | JWT (python-jose) + bcrypt (passlib) | Stateless auth, closed-group accounts |
+| **App language** | Kotlin | Android client |
+| **UI framework** | Jetpack Compose + Material 3 | Declarative UI |
+| **Scrape scheduling** | GitHub Actions (cron) | Daily scrape job, free tier |
+| **API hosting** | Azure App Service, Free tier (F1) | Hosts FastAPI |
 
 ## Overview
 
@@ -47,7 +66,7 @@ Real foreign keys throughout — renaming a domain or company is one row update,
 - Criteria editor (job titles, forbidden languages, forbidden domains)
 - Offers feed (from `GET /me/offers`)
 
-No local filtering logic, no local database beyond the stored JWT — the app is a pure API client. All filtering happens server-side per user.
+No local filtering logic, no local database beyond the stored JWT — the app is a pure API client. All filtering happens server-side per user. See `contexts/ux-design.md` for screen layouts and navigation flow.
 
 ## Hosting
 
@@ -69,3 +88,7 @@ $0/month at this scale.
 - V5: save/bookmark offers.
 - V6: apply directly through the app, track application status.
 - V7: push notifications on new matching offers for followed companies (backend already has the data shape for this — daily scrape + per-user criteria).
+
+---
+
+**End of Architecture Documentation**

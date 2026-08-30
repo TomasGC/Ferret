@@ -25,3 +25,4 @@ Commit: 3de0d6f
 - **Ref/Refs** — link to the issue
 - **Commit/Commits** — short hashes (7 chars)
 - **Language**: English only
+- **All tasks tracked in GitHub Issues** - This file is just a log
