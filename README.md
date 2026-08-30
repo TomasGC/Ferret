@@ -11,12 +11,12 @@ Job-offer tracker: follow companies, set your own filtering criteria, get matchi
 
 ## Structure
 
-- `backend/` — Python/FastAPI API + scrapers, data in MongoDB Atlas
+- `backend/` — Python/FastAPI API + scrapers, data in Postgres (Neon)
 - `app/` — Android app (Kotlin, Jetpack Compose)
 
 ## Status
 
-V1 in progress.
+V1 in progress. See the [wiki](https://github.com/TomasGC/Ferret/wiki) for architecture, roadmap, and UX design, and the [Project board](https://github.com/users/TomasGC/projects/8) for current tasks.
 
 ## License
 
